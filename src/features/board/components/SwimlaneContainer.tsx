@@ -1,4 +1,4 @@
-import { IconButton, Stack, Typography } from "@mui/material"
+import { IconButton, Stack, Theme, Typography, useMediaQuery } from "@mui/material"
 import { Swimlane } from "../../../data/constants"
 import { DotsThreeIcon } from "../../../components/icons"
 import SwimlaneColumn from "./SwimlaneColumn"
@@ -22,6 +22,7 @@ const Swimlane = ({ swimlane }: SwimlaneProps) => {
           xs: 'calc(100vw - 32px)',
           sm: '362px'
         },
+        gap: '16px'
       }}
     >
       <Stack
@@ -35,7 +36,6 @@ const Swimlane = ({ swimlane }: SwimlaneProps) => {
           position: 'sticky',
           top: '0px',
           zIndex: 20,
-          boxShadow: '0 1px 16px 1px rgba(0, 0, 0, 0.1)'
         }}
       >
         <Typography
@@ -56,7 +56,7 @@ const Swimlane = ({ swimlane }: SwimlaneProps) => {
 
 const SwimlaneContainer = ({ swimlanes }: SwimlaneContainerProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
-
+  const isLtMd = useMediaQuery(theme => (theme as Theme).breakpoints.down('md'))
   useEffect(() => {
     console.log(containerRef.current?.scrollWidth)
   })
@@ -65,14 +65,14 @@ const SwimlaneContainer = ({ swimlanes }: SwimlaneContainerProps) => {
     <Stack
       ref={containerRef}
       direction='row'  
-      height='calc(100vh - 166px)' 
+      height={`calc(100vh - ${isLtMd ? 200 : 166}px)`} 
       gap='30px'
       sx={{
         display: {
           xs: '-webkit-box',
           md: 'flex'
         },
-        overflowX: 'scroll',
+        overflowX: 'auto',
       }}
     >
       {swimlanes.map((swimlane, idx) => <Swimlane key={`swimlane-${idx}`} swimlane={swimlane}  /> )}

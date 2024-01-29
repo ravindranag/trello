@@ -17,6 +17,10 @@ const TrelloThemeProvider = ({ children }: PropsWithChildren) => {
         secondary: '#00000020'
       },
       primary: {
+        main: '#000',
+        contrastText: '#fff'
+      },
+      secondary: {
         main: '#fff',
         contrastText: '#000'
       }

@@ -36,6 +36,7 @@ const Header = () => {
     <AppBar
       position="sticky"
       elevation={0}
+      color="secondary"
     >
       <Stack
         direction='row'

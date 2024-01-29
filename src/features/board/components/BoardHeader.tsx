@@ -1,18 +1,10 @@
-import { Avatar, AvatarGroup, IconButton, Stack, Typography } from "@mui/material"
-import { GlobeOutlineIcon, HardDriveIcon, HeartOutlineIcon } from "../../components/icons"
-import VerticalDivider from "../../components/ui/VerticalDivider"
-import KanbanBoard from "./components/KanbanBoard"
+import { Avatar, IconButton, Stack, Typography, AvatarGroup } from "@mui/material"
+import { GlobeOutlineIcon, HardDriveIcon, HeartOutlineIcon } from "../../../components/icons"
+import VerticalDivider from "../../../components/ui/VerticalDivider"
 
-const HomePage = () => {
+const BoardHeader = () => {
   return (
     <Stack
-      padding={{
-        xs: '16px',
-        md: '30px'
-      }}
-      gap={2}
-    >
-      <Stack
         direction={{
           xs: 'column',
           md: 'row'
@@ -74,9 +66,7 @@ const HomePage = () => {
           </Stack>
         </Stack>
       </Stack>
-      <KanbanBoard />
-    </Stack>
   )
 }
 
-export default HomePage
+export default BoardHeader
