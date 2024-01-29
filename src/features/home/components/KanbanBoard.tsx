@@ -1,4 +1,3 @@
-import { Stack } from "@mui/material"
 import { useBoardDetailQuery } from "../../../data/react-query/query"
 import SwimlaneContainer from "./SwimlaneContainer"
 

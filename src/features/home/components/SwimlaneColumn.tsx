@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Card } from "../../../data/constants"
 import { Reorder } from "framer-motion"
-import { Avatar, AvatarGroup, Box, IconButton, Stack, Typography } from "@mui/material"
-import { ChatDotsIcon, HeartOutlineIcon, PaperClipIcon, PlusCircleIcon, PlusIcon } from "../../../components/icons"
+import { Avatar, AvatarGroup, Box, Stack, Typography } from "@mui/material"
+import { ChatDotsIcon, HeartOutlineIcon, PaperClipIcon, PlusIcon } from "../../../components/icons"
 
 type SwimlaneColumnProps = {
   cards: Card[]
@@ -137,8 +137,9 @@ const SwimlaneColumn = ({ cards }: SwimlaneColumnProps) => {
                     direction='row'  
                     alignItems='center'
                     gap='4px'
+                    key={`counter-${idx}`}
                   >
-                    <Typography sx={{ opacity: 0.2 }}>{card[count] as string}</Typography>
+                    <Typography sx={{ opacity: 0.2 }}>{Object(card)[count]}</Typography>
                     {count === 'comments' && <ChatDotsIcon sx={{ width: 20, height: 20, opacity: 0.2 }} />}
                     {count === 'likes' && <HeartOutlineIcon sx={{ width: 20, height: 20 , opacity: 0.2 }}/>}
                     {count === 'attachments' && <PaperClipIcon sx={{ width: 20, height: 20, opacity: 0.2  }}/>}

@@ -1,7 +1,6 @@
 import { Avatar, AvatarGroup, IconButton, Stack, Typography } from "@mui/material"
 import { GlobeOutlineIcon, HardDriveIcon, HeartOutlineIcon } from "../../components/icons"
 import VerticalDivider from "../../components/ui/VerticalDivider"
-import { randomAvatar } from "../../utils/avatar"
 import KanbanBoard from "./components/KanbanBoard"
 
 const HomePage = () => {

@@ -1,7 +1,6 @@
-import { AppBar, Avatar, Box, Divider, IconButton, Stack, TextField, Theme, Typography, useMediaQuery } from "@mui/material"
+import { AppBar, Avatar, Box, IconButton, Stack, TextField, Theme, Typography, useMediaQuery } from "@mui/material"
 import { BellOutlineIcon, PlusCircleIcon, SearchIcon, TrelloBoardIcon, WarningCircleIcon } from "../icons"
 import VerticalDivider from "../ui/VerticalDivider"
-import { randomAvatar } from "../../utils/avatar"
 
 const SearchField = () => {
   return (
