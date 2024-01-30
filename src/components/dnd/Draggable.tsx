@@ -1,5 +1,4 @@
 import { UseDraggableArguments, useDraggable } from "@dnd-kit/core";
-import { useMediaQuery } from "@mui/material";
 import { CSSProperties, PropsWithChildren } from "react";
 
 type DraggableItemProps = {
