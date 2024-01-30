@@ -75,7 +75,7 @@ const TaskCard = ({ cardId }: TaskCardProps) => {
           <AvatarGroup
             total={card.members}
             max={4}
-            renderSurplus={_ => <></>}
+            renderSurplus={() => <></>}
             sx={{
               '& .MuiAvatar-colorDefault': {
                 display: 'none'
