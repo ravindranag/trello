@@ -1,9 +1,8 @@
 import { useDroppable } from "@dnd-kit/core"
-import { CSSProperties, PropsWithChildren } from "react"
+import { PropsWithChildren } from "react"
 
 type DroppableContainerProps = {
   id: string;
-  height?: CSSProperties['height']
 }
 
 const DroppableContainer = (props: PropsWithChildren<DroppableContainerProps>) => {
