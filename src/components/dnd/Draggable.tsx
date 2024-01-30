@@ -1,4 +1,5 @@
 import { UseDraggableArguments, useDraggable } from "@dnd-kit/core";
+import { useMediaQuery } from "@mui/material";
 import { CSSProperties, PropsWithChildren } from "react";
 
 type DraggableItemProps = {
@@ -10,6 +11,7 @@ const DraggableItem = ({ id, children, data }: PropsWithChildren<DraggableItemPr
 	const { setNodeRef, attributes, listeners, transform, isDragging } = useDraggable({
 		id,
 		data,
+		// disabled: !isTouchDevice
 	})
 
 	const style: CSSProperties | undefined = transform ? {
@@ -22,7 +24,8 @@ const DraggableItem = ({ id, children, data }: PropsWithChildren<DraggableItemPr
 			style={{
 				...style,
 				cursor: isDragging ? 'grabbing' : 'grab',
-				touchAction: 'manipulation'
+				touchAction: 'none',
+
 			}}
 			{...listeners}
 			{...attributes}
