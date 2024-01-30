@@ -121,7 +121,7 @@ const TaskCard = ({ cardId }: TaskCardProps) => {
               gap='4px'
               key={`counter-${idx}`}
             >
-              <Typography sx={{ opacity: 0.2 }}>{Object(card)[count]}</Typography>
+              <Typography sx={{ opacity: 0.2 }} variant="body2">{Object(card)[count]}</Typography>
               {count === 'comments' && <ChatDotsIcon sx={{ width: 20, height: 20, opacity: 0.2 }} />}
               {count === 'likes' && <HeartOutlineIcon sx={{ width: 20, height: 20, opacity: 0.2 }} />}
               {count === 'attachments' && <PaperClipIcon sx={{ width: 20, height: 20, opacity: 0.2 }} />}
