@@ -21,7 +21,8 @@ const DraggableItem = ({ id, children, data }: PropsWithChildren<DraggableItemPr
 			ref={setNodeRef}
 			style={{
 				...style,
-				cursor: isDragging ? 'grabbing' : 'grab'
+				cursor: isDragging ? 'grabbing' : 'grab',
+				touchAction: 'manipulation'
 			}}
 			{...listeners}
 			{...attributes}
