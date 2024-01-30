@@ -1,11 +1,33 @@
 import { useQuery } from "@tanstack/react-query";
-import { data } from "../data";
+import { boardDetails } from "../boards";
+import { swimlaneDetails } from "../swimlanes";
+import { cardDetails } from "../cards";
 
-export const useBoardDetailQuery = (title: string) => useQuery({
-  queryKey: ['board', 'detail'],
+export const useBoardDetailQuery = (id: string) => useQuery({
+  queryKey: ['board', 'detail', id],
   queryFn: async () => {
     return {
-      data: data.boards.find(board => board.title === title)
+      data: boardDetails[id]
     }
-  }
+  },
 }) 
+
+
+export const useSwimlaneDetailQuery = (id: string) => useQuery({
+	queryKey: ['swimlane', 'detail', id],
+	queryFn: async () => {
+		return {
+			data: swimlaneDetails[id]
+		}
+	}
+})
+
+
+export const useCardDetailQuery = (id: string) => useQuery({
+	queryKey: ['card', 'detail', id],
+	queryFn: async () => {
+		return {
+			data: cardDetails[id]
+		}
+	}
+})

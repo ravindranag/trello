@@ -2,7 +2,12 @@ import { Avatar, IconButton, Stack, Typography, AvatarGroup } from "@mui/materia
 import { GlobeOutlineIcon, HardDriveIcon, HeartOutlineIcon } from "../../../components/icons"
 import VerticalDivider from "../../../components/ui/VerticalDivider"
 
-const BoardHeader = () => {
+type BoardHeaderProps = {
+	name: string
+}
+
+
+const BoardHeader = ({ name }: BoardHeaderProps) => {
   return (
     <Stack
         direction={{
@@ -16,7 +21,7 @@ const BoardHeader = () => {
         flexGrow={1}
         gap={2}
       >
-        <Typography variant="h5" fontWeight={500} fontFamily='PoppinsMedium'>Brackets</Typography>
+        <Typography variant="h5" fontWeight={500} fontFamily='PoppinsMedium'>{name}</Typography>
         <Stack
           direction='row'
           flexGrow={1}
