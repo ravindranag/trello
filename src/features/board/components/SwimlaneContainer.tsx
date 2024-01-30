@@ -34,6 +34,7 @@ const Swimlane = ({ swimlaneId }: SwimlaneProps) => {
 			<Stack
 				direction='row'
 				justifyContent='space-between'
+				alignItems='center'
 				gap={2}
 				padding='14px 20px'
 				bgcolor='#f4f4f4'
